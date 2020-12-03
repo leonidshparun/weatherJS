@@ -1,46 +1,87 @@
-.icon {
-    border-radius: 50%;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+    color: white;
 }
 
+.box {
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
 
 .grid-container {
-    background-color: rgb(121, 206, 206);
+    background-color: #009688;
     width: 180px;
     justify-content: center;
     display: grid;
-    grid-template-columns: 80px 80px;
-    grid-template-rows: 30px 80px 100px 30px 70px;
-    gap: 0px 0px;
+    grid-template-columns: 75px 75px;
+    grid-template-rows: 30px 70px 75px 25px 30px;
+    gap: 5px 0;
     grid-template-areas:
         "searchbar searchbar"
         "location location"
         "icon temperature"
         "range feelsLike"
-        "description description";    
+        "description description";
 }
 
-.grid-container > div {
-    border: 1px solid blue;
-}
 
 .location {
     grid-area: location;
 }
 
+.location__city {
+    font-size: 22px;
+}
+
+.location__details,
+.feelsLike p,
+.range p {
+    font-size: 10px;
+    color: #f0f8ffa6;
+}
+
+.location,
+.feelsLike,
+.range,
+.description,
+.temperature {
+    text-align: center;
+    justify-self: center;
+}
+
 .searchbar {
     grid-area: searchbar;
+    display: none;
 }
 
 .icon {
     grid-area: icon;
+    display: block;
+    text-align: right;
+}
+
+.icon img {
+    width: 75px;
 }
 
 .temperature {
     grid-area: temperature;
 }
 
+.temperature p {
+    font-size: 50px;
+}
+
 .description {
     grid-area: description;
+}
+
+.description p {
+    font-size: 14px;
 }
 
 .range {
