@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vanilla JavaScript Weather App</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="container">
     <h1>Vanilla JavaScript Weather App</h1>
+    <aside class="box">
+        <div class="grid-container">
+            <div class="searchbar">
+                <input type="search" placeholder="searchbar"></input>
+            </div>
+
+            <div class="location">
+                <h3>Moscow</h3>
+                <p>Fri, November 30, 4:58 PM</p>
+            </div>
+            <div class="icon">
+                <img class="icon" src="http://openweathermap.org/img/wn/10d@2x.png" title="icon"><img />
+            </div>
+            <div class="temperature">
+                <p>13°</p>
+            </div>
+            <div class="description">
+                <p>Light rain</p>
+            </div>
+            <div class="range">13° / 19°</div>
+            <div class="feelsLike">Feels like 14°</div>
+        </div>
+    </aside>
     <script type="text/javascript" src="main.js"></script>
 </body>
+
 </html>
