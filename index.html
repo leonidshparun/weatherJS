@@ -12,7 +12,12 @@
     <aside class="box">
         <div class="grid-container">
             <div class="searchbar">
-                <input type="search" placeholder="searchbar"></input>
+                <form autocomplete="off">
+                    <div class="autocomplete" style="width:150px;">
+                        <input id="myInput" type="text" name="myCity" placeholder="City">
+                        <input type="submit" value="⌕">
+                    </div>
+                </form>
             </div>
 
             <div class="location">
@@ -20,24 +25,29 @@
                 <p class="location__city">MOSCOW</p>
                 <p class="location__details">Fri, November 30, 4:58 PM</p>
             </div>
+
             <div class="icon">
                 <img src="http://openweathermap.org/img/wn/10d@2x.png" title="icon"><img />
             </div>
+
             <div class="temperature">
-                <p> 13°</p>
+                <p>13°</p>
             </div>
+
             <div class="description">
                 <p>Light rain</p>
             </div>
+
             <div class="range">
                 <p>13° / 19°</p>
             </div>
+
             <div class="feelsLike">
-                <p> Feels like 14°</p>
+                <p>Feels like 14°</p>
             </div>
         </div>
     </aside>
-    <script type="text/javascript" src="main.js"></script>
+    <script type="module" src="main.js"></script>
 </body>
 
 </html>
