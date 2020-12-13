@@ -8,12 +8,13 @@ const KToC = (value) => Math.round(value) - 273;
 const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
 const requestData = async (url) => {
-  const resp = await fetch(url);
-  if (resp.ok) {
+  try {
+    const resp = await fetch(url);
     const json = await resp.json();
     return json;
+  } catch (e) {
+    throw Error(e.status);
   }
-  throw Error(resp.status);
 };
 
 const organizeData = ({

@@ -10,7 +10,9 @@
     background-color: bisque;
     display: flex;
     justify-content: center;
-    padding: 10px;
+    align-items: flex-start;
+    padding: 20px;
+    height: 100vh;
 }
 
 .grid-container {
@@ -36,6 +38,7 @@
 
 .location__city {
     font-size: 22px;
+    height: 36px;
 }
 
 .location__details,

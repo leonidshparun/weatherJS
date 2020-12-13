@@ -10,6 +10,18 @@ export const DOM = {
   date: document.querySelector('#date'),
 };
 
+const calcFontSize = (length) => {
+  let fs = 22;
+  if (length > 16) {
+    fs = 14;
+  } else if (length > 10) {
+    fs = 16;
+  } else {
+    fs = 22;
+  }
+  return `${fs}px`;
+};
+
 const calcDate = (dateOptions = {
   weekday: 'short',
   month: 'long',
@@ -19,6 +31,7 @@ const calcDate = (dateOptions = {
 }) => new Date().toLocaleDateString('en-US', dateOptions);
 
 export const setCurrentWeather = (weather) => {
+  DOM.location.style.fontSize = calcFontSize(weather.name.length);
   DOM.location.innerText = weather.name.toUpperCase();
   DOM.temperature.innerText = `${weather.temp}°`;
   DOM.icon.setAttribute('src', weather.iconUrl);
