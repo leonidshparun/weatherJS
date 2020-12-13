@@ -10,19 +10,16 @@ export const DOM = {
   date: document.querySelector("#date"),
 }
 
-const calcDate = () => {
-  const dateOptions = {
-    weekday: 'short',
-    month: 'long',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric'
-  };
-  return new Date().toLocaleDateString('en-US', dateOptions);
-}
+const calcDate = (dateOptions = {
+  weekday: 'short',
+  month: 'long',
+  day: 'numeric',
+  hour: 'numeric',
+  minute: 'numeric'
+}) => new Date().toLocaleDateString('en-US', dateOptions);
 
-export const setCurrentWeather = (weather, city) => {
-  DOM.location.innerText = city;
+export const setCurrentWeather = weather => {
+  DOM.location.innerText = weather.name.toUpperCase();
   DOM.temperature.innerText = `${weather.temp}°`;
   DOM.icon.setAttribute('src', weather.iconUrl);
   DOM.description.innerText = weather.description;
@@ -31,3 +28,5 @@ export const setCurrentWeather = (weather, city) => {
   DOM.date.innerText = calcDate();
   DOM.searchBar.value = '';
 }
+
+export default {DOM, setCurrentWeather}
